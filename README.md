@@ -3,8 +3,13 @@ Introduction to Machine Learning: We'll employ a type of supervised learning, si
 Project Title:
 
 
+# Add files
+Create README.md & .gitignore when creating respository
+venv created when creating the virtual environemnt
+Add file: requirements.txt
 
 
+### Create Virtual Environment
 # Navigate to the project directory
 cd path/to/your/repository
 
@@ -12,8 +17,6 @@ cd path/to/your/repository
 python -m venv venv
 
 # Activate the virtual environment
-# Windows
-.\venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
 
@@ -24,7 +27,8 @@ pip install requests
 deactivate
 
 
-###Install Dependencies
+### Install Dependencies
+# Install any necessary packages
 jupyterlab
 numpy
 pandas
@@ -34,3 +38,31 @@ seaborn
 scipy
 
 pip install jupyterlab numpy pandas pyarrow matplotlib seaborn scipy notebook
+
+# Freeze the current state of installed packages
+pip freeze > requirements.txt
+
+# Deactivate the virtual environment when done
+deactivate
+
+
+
+### Saving Progress/ Commit Changes
+
+# Check the status of your repository
+git status
+
+# Add all changes to the staging area
+git add .
+
+# Or add specific files to the staging area
+git add filename
+
+# Commit the changes with a descriptive message
+git commit -m "Descriptive Message"
+
+# Push the changes to the remote repository
+git push origin main
+
+# Or if your branch is named master
+git push origin master
