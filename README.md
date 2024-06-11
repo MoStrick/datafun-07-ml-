@@ -81,3 +81,16 @@ Open Unit 15 in Finder
    Click and hold over folder in project open in VS Code
 
 
+### CC 7.5 Chart a Straight Line (Ex 10.16 in textbook)
+ipython --matplotlib
+In [1]: c = lambda f: 5 / 9 * (f - 32)
+In [2]: temps = [(f, c(f)) for f in range (0, 101,10)]
+In [3]: import pandas as pd
+In [4]: temps_df = pd.DataFrame(temps, columns=['Fahrenheit','Celsius'])
+In [5]: axes = temps_df.plot(x='Fahrenheit',y='Celsius',style='.-')
+In [6]: y_label = axes.set_ylabel('Celsius')
+We obtained the January average high temperatures for New York City from 1895 through 2018 from NOAA’s “Climate at a Glance” time series at: https://www.ncdc.noaa.gov/cag
+OR file in Unit 10: ave_hi_nyc_jan_1895-2018.csv
+In [7]: nyc = pd.read_csv('ave_hi_nyc_jan_1895-2018.csv')
+
+
