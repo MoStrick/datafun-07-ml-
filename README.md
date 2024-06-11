@@ -66,3 +66,14 @@ git push origin main
 
 # Or if your branch is named master
 git push origin master
+
+
+
+
+### Upload Files
+Open Unit 10 in Finder
+   Click and hold over folder in project open in VS Code
+Open Unit 15 in Finder
+   Click and hold over folder in project open in VS Code
+
+
