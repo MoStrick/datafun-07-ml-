@@ -36,8 +36,12 @@ pyarrow
 matplotlib
 seaborn
 scipy
+pymongo
+pyspark
+tensorflow
+wordcloud
 
-pip install jupyterlab numpy pandas pyarrow matplotlib seaborn scipy notebook
+pip install jupyterlab numpy pandas pyarrow matplotlib seaborn scipy notebook pymongo pyspark tensorflow wordcloud
 
 # Freeze the current state of installed packages
 pip freeze > requirements.txt
