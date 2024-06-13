@@ -92,5 +92,40 @@ In [6]: y_label = axes.set_ylabel('Celsius')
 We obtained the January average high temperatures for New York City from 1895 through 2018 from NOAA’s “Climate at a Glance” time series at: https://www.ncdc.noaa.gov/cag
 OR file in Unit 10: ave_hi_nyc_jan_1895-2018.csv
 In [7]: nyc = pd.read_csv('ave_hi_nyc_jan_1895-2018.csv')
+# Display beginning and end of table (first and last five rows)
+In [8]: nyc.head()
+In [9]: nyc.tail()
+# Rename Column
+In [10]: nyc.columns = ['Date','Temperature','Anomaly']
+In [11]:nyc.head(3)
+Remove 01 from the dates to create just columns
+In [12]: nyc.Date.dtype
+   Out[12]: dtype('int64'): floor division performs integer division on every element of the series
+In [13]: nyc.Date = nyc.Date.floordiv(100)
+In [14]: nyc.head(3)
+# Calculating basic descriptive statistis for the data set
+In[15]: pd.set_option('precision',2)
+In [16]: nyc.Temperature.describe()
+# Forecasting future values (SciPy)
+In [17]: from scipy import stats
+IN [18]: linear_regression=stats.linregress(x=nyc.Date,y=nyc.Temperature)
+The opject returned by linregress contains the regression line's slope and y-intercept:
+In [19]: linear_regression.slope
+In [20]: linear_regression.intercept
+To predict temperature in 2019 and 1890
+In [21]: linear_regression.slope*2019+linear_regression.intercept
+In [22]: linear_regression.slope*1890+linear_regression.intercept
+# Create the scatterplot
+Close the matplotlib window if you have not done so already, or it will use the existing window that already contains the graph
+In[23]: import seaborn as sns
+In [24]: sns.set_style('whitegrid')
+In [25]: axes = sns.regplot(x=nyc.Date,y=nyc.Temperature)
+
+In [26]: axes.set_ylim(10,70)
+
+
+
+
+
 
 
